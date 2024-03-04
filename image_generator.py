@@ -4,7 +4,6 @@ import csv
 import utm
 import os, shutil
 
-
 def create(classe, flag):
     x = []
     y = []
@@ -28,12 +27,14 @@ def create(classe, flag):
         cont_train = 0
         if flag == 0:
             classe = 'not_fishing'
+        plt.figure(figsize=(2.56, 2.56))
         for row in plots:
             mmsiAnterior = mmsiAtual
             mmsiAtual = row[0]
             source = row[9]
             if float(row[8]) != flag or source == 'false_positives' or mmsiAtual != mmsiAnterior:
                 if len(x) >= 3:
+
                     plt.axis('off')
                     for i in range((len(v))):
                         color = 'black'
@@ -56,17 +57,27 @@ def create(classe, flag):
                             b.append(y[i + 1])
                             plt.plot(a, b, marker='o', color=color)
                     cont_train = cont_train + 1
-                    filename = 'images/' + classe + '/' + str(mmsiAtual) + '-' + str(cont_train) + 'A.png'
+                    avg_point = int(len(x) / 2)
+                    filename = 'images/' + classe + '/' + str(mmsiAtual) + '-' + str(cont_train) + 'A['+classe+','+str(x[avg_point])+','+str(y[avg_point])+'].png'
                     plt.savefig(filename)
                     plt.clf()
 
                     if classe == 'purse_seines':
                         im = Image.open(filename).convert('RGBA')
-                        rotated_img = im.rotate(180)
+                        rotated_img = im.rotate(90)
                         plt.imshow(rotated_img)
                         plt.axis('off')
                         plt.savefig(filename.replace('A', 'B'))
+                        rotated_img = im.rotate(180)
+                        plt.imshow(rotated_img)
+                        plt.axis('off')
+                        plt.savefig(filename.replace('A', 'C'))
+                        rotated_img = im.rotate(270)
+                        plt.imshow(rotated_img)
+                        plt.axis('off')
+                        plt.savefig(filename.replace('A', 'D'))
                         plt.clf()
+
 
                 x.clear()
                 y.clear()
@@ -80,7 +91,11 @@ def create(classe, flag):
             currentY = xyCoord[1] / 1852
             x.append(currentX)
             y.append(currentY)
-            veloc = float(row[4])
+            veloc = 0
+            try:
+                veloc = float(row[4])
+            except:
+                veloc = 0
             v.append(veloc)
 
     path = 'images/' + classe + '/'
@@ -90,12 +105,12 @@ def create(classe, flag):
     cont_test = 0
 
     if flag == 0:
-        if not os.path.exists(os.path.dirname('images/train/not_fishing')):
-            os.makedirs(os.path.dirname('images/train/not_fishing'))
-        if not os.path.exists(os.path.dirname('images/test/not_fishing')):
-            os.makedirs(os.path.dirname('images/test/not_fishing'))
-        if not os.path.exists(os.path.dirname('images/val/not_fishing')):
-            os.makedirs(os.path.dirname('images/val/not_fishing'))
+        if not os.path.exists(os.path.dirname('images/train/not_fishing/')):
+            os.makedirs(os.path.dirname('images/train/not_fishing/'))
+        if not os.path.exists(os.path.dirname('images/test/not_fishing/')):
+            os.makedirs(os.path.dirname('images/test/not_fishing/'))
+        if not os.path.exists(os.path.dirname('images/val/not_fishing/')):
+            os.makedirs(os.path.dirname('images/val/not_fishing/'))
     else:
         os.makedirs(os.path.dirname('images/train/' + classe+'/'))
         os.makedirs(os.path.dirname('images/test/' + classe + '/'))
@@ -131,15 +146,19 @@ except:
 try:
     shutil.rmtree('images/not_fishing')
 except:
-    print('Nothing to delete: \'not fishing\' files was not created before')
+    print('Nothing to delete: \'not fishing\' files were not created before')
 
 create('drifting_longlines', 1)
 create('drifting_longlines', 0)
+create('fixed_gear', 1)
+create('fixed_gear', 0)
 create('purse_seines', 1)
 create('purse_seines', 0)
 create('trawlers', 1)
 create('trawlers', 0)
+
 shutil.rmtree('images/drifting_longlines')
+shutil.rmtree('images/fixed_gear')
 shutil.rmtree('images/purse_seines')
 shutil.rmtree('images/trawlers')
 shutil.rmtree('images/not_fishing')

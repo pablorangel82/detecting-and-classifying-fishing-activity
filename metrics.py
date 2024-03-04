@@ -1,48 +1,82 @@
 import math
 
-import tensorflow as tf
-from sklearn.metrics import matthews_corrcoef
+# Also known as Specificity
+def true_negative_rate(tn, fp):
+    if (tn + fp) == 0:
+        return 0
+    return tn / (tn + fp)
+
 
 def metric_acc(tp, fp, fn, tn):
+    if (tp + fn + fp + tn) == 0:
+        return 0
     return (tp + tn) / (tp + fn + fp + tn)
 
 
-def metric_f1(tp, fp, fn, tn):
-    return (2 * tp) / ((2 * tp) + fp + fn)
+def metric_f1(precision, recall):
+    if (precision + recall) == 0:
+        return 0
+    return (2 * precision * recall) / (precision + recall)
 
 
 def metric_precision(tp, fp):
+    if (tp + fp) == 0:
+        return 0
     return tp / (tp + fp)
 
 
-def metric_recall(tp, fn):
+# Also known as True Positive Rate or Sensitivity or Recall
+def metric_true_positive_rate(tp, fn):
+    if (tp + fn) == 0:
+        return 0
     return tp / (tp + fn)
 
 
-def sum (v,col):
+def metric_false_positive_rate(fp, tn):
+    if (fp + tn) == 0:
+        return 0
+    return fp / (fp + tn)
+
+
+def sum_vector(v):
     s = 0
-    for i in range (len(v)):
+    for i in range(len(v)):
+        s = s + v[i]
+    return s
+
+
+def sum(v, col):
+    s = 0
+    for i in range(len(v)):
         s = s + v[i][col]
     return s
 
+
 def sum_prod(table, col1, col2):
     s = 0
-    for i in range (len(table)):
+    for i in range(len(table)):
         s = s + (table[i][col1] * table[i][col2])
     return s
+
+
 def metric_mcc(table):
-    s = sum(table,0)
+    s = sum(table, 0)
     c = sum(table, 2)
     tp = sum_prod(table, 0, 1)
     num = (s * c) - tp
     s2 = s * s
     p2 = sum_prod(table, 1, 1)
-    t2 = sum_prod(table, 0,0)
-    den = math.sqrt((s2-p2)*(s2-t2))
+    t2 = sum_prod(table, 0, 0)
+    w = (s2 - p2)
+    z = (s2 - t2)
+    den = math.sqrt(w) * math.sqrt(z)
+    if den == 0:
+        return -1
     mcc = num / den
     return mcc
 
-def format_table (number_of_classes, correct_labels, predicted_labels):
+
+def format_table(number_of_classes, correct_labels, predicted_labels):
     max = number_of_classes
     table = []
     for i in range(max):
@@ -59,86 +93,64 @@ def format_table (number_of_classes, correct_labels, predicted_labels):
     print(table)
     return table
 
-def show_metrics(y_true, y_pred):
-    NUMBER_OF_CLASSES = 4
-    correct_labels = tf.concat(y_true, axis=0)
-    predicted_labels = tf.concat(y_pred, axis=0)
 
-    fp = tf.keras.metrics.FalsePositives()
-    fp.update_state(correct_labels, predicted_labels)
-    fn = tf.keras.metrics.FalseNegatives()
-    fn.update_state(correct_labels, predicted_labels)
-    tp = tf.keras.metrics.TruePositives()
-    tp.update_state(correct_labels, predicted_labels)
-    tn = tf.keras.metrics.TrueNegatives()
-    tn.update_state(correct_labels, predicted_labels)
-
-    overallAccuracy = tf.keras.metrics.Accuracy()
-    overallAccuracy.update_state(correct_labels, predicted_labels)
-    overallCategoricalAccuracy = tf.keras.metrics.CategoricalAccuracy()
-    overallCategoricalAccuracy.update_state(correct_labels, predicted_labels)
-    overallRecall = tf.keras.metrics.Recall()
-    overallRecall.update_state(correct_labels, predicted_labels)
-    overallPrecision = tf.keras.metrics.Precision()
-    overallPrecision.update_state(correct_labels, predicted_labels)
-    overallF1 = (2 * (overallPrecision.result() * overallRecall.result()) ) / (overallPrecision.result() + overallRecall.result())
-    table = format_table(NUMBER_OF_CLASSES, correct_labels, predicted_labels)
-    mcc = metric_mcc(table)
-    print(correct_labels)
-    print(predicted_labels)
-    print('\nOverall metrics')
-    print('Accuracy:', overallAccuracy.result())
-    print('Categorical Accuracy:', overallCategoricalAccuracy.result())
-    print('Recall:', overallRecall.result())
-    print('F1 Score:', overallF1)
-    print('Precision:', overallPrecision.result())
-    print('MCC:', mcc)
-
-    confusion_matrix = tf.math.confusion_matrix(correct_labels, predicted_labels)
-
+def show_metrics(confusion_matrix, table):
+    classes = ['Drifting longlines', 'Fixed Gear', 'Not fishing', 'Purse seines', 'Trawlers']
     tps = []
     tns = []
     fps = []
     fns = []
     dim = len(confusion_matrix[0])
-
-
+    print('\nSummary Table')
+    print(table)
     for i in range(dim):
         tp = 0
         for j in range(dim):
             if i == j:
-                tps.append(tf.keras.backend.get_value(confusion_matrix[i][j]))
+                tps.append(confusion_matrix[i][j])
                 tnsc = 0
                 for k in range(dim):
                     for l in range(dim):
                         if k != i and l != j:
-                            tnsc += tf.keras.backend.get_value(confusion_matrix[k][l])
+                            tnsc += confusion_matrix[k][l]
                 tns.append(tnsc)
                 fnsc = 0
                 for k in range(dim):
                     if k != i:
-                        fnsc += tf.keras.backend.get_value(confusion_matrix[i][k])
+                        fnsc += confusion_matrix[i][k]
                 fns.append(fnsc)
                 fpsc = 0
                 for k in range(dim):
                     if k != j:
-                        fpsc += tf.keras.backend.get_value(confusion_matrix[k][j])
+                        fpsc += confusion_matrix[k][j]
                 fps.append(fpsc)
-    print("\n\nConfusion Matrix")
+    print("\nConfusion Matrix")
     print(confusion_matrix)
     for i in range(dim):
         acc = metric_acc(tps[i], fps[i], fns[i], tns[i])
-        f1 = metric_f1(tps[i], fps[i], fns[i], tns[i])
-        precision = metric_precision(tps[i],fps[i])
-        recall = metric_recall(tps[i],fns[i])
+        precision = metric_precision(tps[i], fps[i])
+        recall = metric_true_positive_rate(tps[i], fns[i])
+        f1 = metric_f1(precision, recall)
+        print('\nClass ' + classes[i])
+        print('True Positives: ' + str(tps[i]))
+        print('True Negatives: ' + str(tns[i]))
+        print('False Positives: ' + str(fps[i]))
+        print('False Negatives: ' + str(fns[i]))
+        print('Accuracy: ' + str(acc))
+        print('F1 Score: ' + str(f1))
+        print('Precision: ' + str(precision))
+        print('Recall: ' + str(recall))
 
-        print('\n\nClass ' + str(i))
-        print('\nTrue Positives: ' + str(tps[i]))
-        print('\nTrue Negatives: ' + str(tns[i]))
-        print('\nFalse Positives: ' + str(fps[i]))
-        print('\nFalse Negatives: ' + str(fns[i]))
+    total_tp = sum_vector(tps)
+    total_fp = sum_vector(fps)
+    total_fn = sum_vector(fns)
+    total_tn = sum_vector(tns)
 
-        print('\nAccuracy: ' + str(acc))
-        print('\nF1 Score: ' + str(f1))
-        print('\nPrecision: ' + str(precision))
-        print('\nRecall: ' + str(recall))
+    print('\nOverall metrics')
+    print('Accuracy:', metric_acc(total_tp, total_fp, total_fn, total_tn))
+    recall = metric_true_positive_rate(total_tp, total_fn)
+    precision = metric_precision(total_tp, total_fp)
+    print('Recall:', recall)
+    print('Precision:', precision)
+    print('F1 Score:', metric_f1(precision, recall))
+    print('MCC:', metric_mcc(table))
