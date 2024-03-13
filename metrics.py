@@ -16,7 +16,7 @@ def metric_acc(tp, fp, fn, tn):
 def metric_f1(precision, recall):
     if (precision + recall) == 0:
         return 0
-    return (2 * precision * recall) / (precision + recall)
+    return 2 * ((precision * recall) / (precision + recall))
 
 
 def metric_precision(tp, fp):

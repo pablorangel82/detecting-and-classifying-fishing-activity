@@ -62,7 +62,7 @@ def create(classe, flag):
                     plt.savefig(filename)
                     plt.clf()
 
-                    if classe == 'purse_seines':
+                    if classe == 'purse_seines' or classe == 'fixed_gear':
                         im = Image.open(filename).convert('RGBA')
                         rotated_img = im.rotate(90)
                         plt.imshow(rotated_img)

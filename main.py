@@ -1,3 +1,3 @@
-from classifier import run
+from fusioner import run
 
 run()

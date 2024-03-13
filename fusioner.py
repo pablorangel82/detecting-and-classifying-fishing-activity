@@ -67,6 +67,7 @@ def do_fuzzy_inference(set_areas, probs_acquired, file_name):
 
     closest_area, closest_distance, closest_type = get_closest_area(set_areas, x, y)
     results[closest_type] = max(probs_acquired[closest_type],fuzzy_inference(closest_distance, probs_acquired[closest_type], closest_area[2]))
+   # results[closest_type] = fuzzy_inference(closest_distance, probs_acquired[closest_type], closest_area[2])
 
     return results
 
@@ -95,7 +96,7 @@ def run():
 
     test_file_names = test_dataset.filenames
 
-    matrix_with_fuzzy = np.array([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0],[0, 0, 0, 0, 0]])
+    matrix_with_fuzzy = np.array([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
     table_with_fuzzy = np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]])
     matrix_without_fuzzy = np.array([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
     table_without_fuzzy = np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]])
