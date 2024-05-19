@@ -71,6 +71,7 @@ class FusionAgent:
 
         return results
 
+    #Not used in Fusion Conference paper
     def classify_method2(self, image, file_name):
         input = np.array([image])
         probs = self.cnn.model.predict(input, verbose=0)
