@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bbe4db5-1a57-4273-b157-bbdda277a2f7" name="Changes" comment="Model and weights saved to reproduce results." />
+    <list default="true" id="0bbe4db5-1a57-4273-b157-bbdda277a2f7" name="Changes" comment="Model and weights saved to reproduce results.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +210,7 @@
       <workItem from="1715628992257" duration="41913000" />
       <workItem from="1715895877439" duration="6434000" />
       <workItem from="1716043367936" duration="32937000" />
-      <workItem from="1716129609099" duration="20360000" />
+      <workItem from="1716129609099" duration="21008000" />
     </task>
     <task id="LOCAL-00001" summary="Model and weights saved to reproduce results.">
       <option name="closed" value="true" />
@@ -242,7 +244,31 @@
       <option name="project" value="LOCAL" />
       <updated>1716154211914</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Model and weights saved to reproduce results.">
+      <option name="closed" value="true" />
+      <created>1716154304864</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716154304864</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Model and weights saved to reproduce results.">
+      <option name="closed" value="true" />
+      <created>1716154531340</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716154531340</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Model and weights saved to reproduce results.">
+      <option name="closed" value="true" />
+      <created>1716154591047</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716154591047</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
