@@ -1,0 +1,12 @@
+tensorflow
+pillow
+utm
+matplotlib
+metrics
+scikit-fuzzy
+scikit-learn
+folium
+shapely
+geopy
+pandas
+

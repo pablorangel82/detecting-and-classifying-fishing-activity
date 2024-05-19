@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0bbe4db5-1a57-4273-b157-bbdda277a2f7" name="Changes" comment="Model and weights saved to reproduce results." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2fvbUlZOHvoIaujCDFeVqwqLhLC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Fusion Results.executor": "Run",
+    "Python.Load and Test.executor": "Run",
+    "Python.Preparation.executor": "Run",
+    "Python.Train and Test.executor": "Run",
+    "Python.fishing_spots.executor": "Run",
+    "Python.image_converter.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.preparation.executor": "Run",
+    "Python.run.executor": "Run",
+    "Python.test.executor": "Debug",
+    "Python.testGPU.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Pablo/Projetos/ship-detector-classifier",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pablo\Projetos\detecting-and-classifying-fishing-activity\fusion_results" />
+      <recent name="C:\Users\Pablo\Projetos\detecting-and-classifying-fishing-activity\output" />
+      <recent name="C:\Users\Pablo\Projetos\detecting-and-classifying-fishing-activity" />
+      <recent name="C:\Users\Pablo\PycharmProjects\detecting-and-classifying-fishing-activity" />
+      <recent name="C:\Users\Pablo\PycharmProjects\detecting-and-classifying-fishing-activity\data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Fusion Results">
+    <configuration name="Fusion Results" type="PythonConfigurationType" factoryName="Python">
+      <module name="detecting-and-classifying-fishing-activity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="dacfa-gpu-env" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fusion_results.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Load and Test" type="PythonConfigurationType" factoryName="Python">
+      <module name="detecting-and-classifying-fishing-activity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="dacfa-gpu-env" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/load_and_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Preparation" type="PythonConfigurationType" factoryName="Python">
+      <module name="detecting-and-classifying-fishing-activity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="dacfa-gpu-env" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preparation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Train and Test" type="PythonConfigurationType" factoryName="Python">
+      <module name="detecting-and-classifying-fishing-activity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="dacfa-gpu-env" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train_and_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Preparation" />
+      <item itemvalue="Python.Train and Test" />
+      <item itemvalue="Python.Fusion Results" />
+      <item itemvalue="Python.Load and Test" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0bbe4db5-1a57-4273-b157-bbdda277a2f7" name="Changes" comment="" />
+      <created>1714684516376</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714684516376</updated>
+      <workItem from="1714684517421" duration="505000" />
+      <workItem from="1714685031767" duration="7643000" />
+      <workItem from="1714750210095" duration="1391000" />
+      <workItem from="1714751649179" duration="2366000" />
+      <workItem from="1714758619720" duration="2663000" />
+      <workItem from="1714761348670" duration="1596000" />
+      <workItem from="1714762964587" duration="5937000" />
+      <workItem from="1714768950233" duration="3172000" />
+      <workItem from="1714772157564" duration="1425000" />
+      <workItem from="1714773611988" duration="55000" />
+      <workItem from="1714773705263" duration="4381000" />
+      <workItem from="1714922027676" duration="613000" />
+      <workItem from="1715446069058" duration="357000" />
+      <workItem from="1715446440245" duration="134000" />
+      <workItem from="1715446581946" duration="1541000" />
+      <workItem from="1715448211927" duration="7237000" />
+      <workItem from="1715455685520" duration="7885000" />
+      <workItem from="1715465475392" duration="15382000" />
+      <workItem from="1715606405348" duration="18830000" />
+      <workItem from="1715628992257" duration="41913000" />
+      <workItem from="1715895877439" duration="6434000" />
+      <workItem from="1716043367936" duration="32937000" />
+      <workItem from="1716129609099" duration="20360000" />
+    </task>
+    <task id="LOCAL-00001" summary="Model and weights saved to reproduce results.">
+      <option name="closed" value="true" />
+      <created>1716153215833</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716153215834</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Model and weights saved to reproduce results.">
+      <option name="closed" value="true" />
+      <created>1716153800468</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716153800468</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Model and weights saved to reproduce results.">
+      <option name="closed" value="true" />
+      <created>1716153889415</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716153889415</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Model and weights saved to reproduce results.">
+      <option name="closed" value="true" />
+      <created>1716154211914</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716154211914</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Model and weights saved to reproduce results." />
+    <option name="LAST_COMMIT_MESSAGE" value="Model and weights saved to reproduce results." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$preparation.coverage" NAME="preparation Coverage Results" MODIFIED="1714783084926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Train_and_Test.coverage" NAME="Train and Test Coverage Results" MODIFIED="1716150716668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$image_converter.coverage" NAME="image_converter Coverage Results" MODIFIED="1714686262872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$testGPU.coverage" NAME="testGPU Coverage Results" MODIFIED="1714689555384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Fusion_Results.coverage" NAME="Fusion Results Coverage Results" MODIFIED="1716151859120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Load_and_Test.coverage" NAME="Load and Test Coverage Results" MODIFIED="1715606549268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$run.coverage" NAME="run Coverage Results" MODIFIED="1714687398195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$main.coverage" NAME="main Coverage Results" MODIFIED="1714774428554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$fishing_spots.coverage" NAME="fishing_spots Coverage Results" MODIFIED="1714776134055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Preparation.coverage" NAME="Preparation Coverage Results" MODIFIED="1715452773893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$test.coverage" NAME="test Coverage Results" MODIFIED="1715899417520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

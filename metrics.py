@@ -93,6 +93,17 @@ def format_table(number_of_classes, correct_labels, predicted_labels):
     print(table)
     return table
 
+def comparision(obtained, fishnet, gfw):
+    obtained = obtained * 100
+    eval = 'Worse of all'
+    if obtained > fishnet and obtained > gfw:
+        eval = 'Best of all'
+    else:
+        if obtained > fishnet:
+            eval = 'Better than fishnet only'
+        if obtained > gfw:
+            eval = 'Better than gfw only'
+    return eval
 
 def show_metrics(confusion_matrix, table):
     classes = ['Drifting longlines', 'Fixed Gear', 'Not fishing', 'Purse seines', 'Trawlers']
@@ -126,20 +137,41 @@ def show_metrics(confusion_matrix, table):
                 fps.append(fpsc)
     print("\nConfusion Matrix")
     print(confusion_matrix)
+    fishnet = []
+    fishnet.append([92.63,92.23,91.78,92])
+    fishnet.append([97.62,97.35,97.36,97.35])
+    fishnet.append([0,0,0,0])
+    fishnet.append([97.58,96.21,95.34,95.77])
+    fishnet.append([98.27,96.13,95.18,95.65])
+
+    gfw = []
+    gfw.append([92,94,91,93])
+    gfw.append([95,88,97,90])
+    gfw.append([0,0,0,0])
+    gfw.append([78,81,95,79])
+    gfw.append([98,94,96,96])
+
     for i in range(dim):
         acc = metric_acc(tps[i], fps[i], fns[i], tns[i])
         precision = metric_precision(tps[i], fps[i])
         recall = metric_true_positive_rate(tps[i], fns[i])
         f1 = metric_f1(precision, recall)
+
+        acc_eval = comparision(acc, fishnet[i][0], gfw[i][0])
+        prec_eval = comparision(precision, fishnet[i][1], gfw[i][1])
+        recall_eval = comparision(recall, fishnet[i][2], gfw[i][2])
+        f1_eval = comparision(f1, fishnet[i][3], gfw[i][3])
+
         print('\nClass ' + classes[i])
         print('True Positives: ' + str(tps[i]))
         print('True Negatives: ' + str(tns[i]))
         print('False Positives: ' + str(fps[i]))
         print('False Negatives: ' + str(fns[i]))
-        print('Accuracy: ' + str(acc))
-        print('F1 Score: ' + str(f1))
-        print('Precision: ' + str(precision))
-        print('Recall: ' + str(recall))
+        print('Metric | Value Obtained | FishNet | GFW')
+        print('Accuracy: ' + str(acc*100) + ' | ' + str(fishnet[i][0]) + ' | ' + str(gfw[i][0]) + ' ' + acc_eval)
+        print('Precision: ' + str(precision*100) + ' | ' + str(fishnet[i][1]) + ' | ' + str(gfw[i][1]) + ' ' + prec_eval)
+        print('Recall: ' + str(recall*100) + ' | ' + str(fishnet[i][2]) + ' | ' + str(gfw[i][2]) + ' ' + recall_eval)
+        print('F1 Score: ' + str(f1*100) + ' | ' + str(fishnet[i][3]) + ' | ' + str(gfw[i][3]) + ' ' + f1_eval)
 
     total_tp = sum_vector(tps)
     total_fp = sum_vector(fps)
@@ -147,10 +179,10 @@ def show_metrics(confusion_matrix, table):
     total_tn = sum_vector(tns)
 
     print('\nOverall metrics')
-    print('Accuracy:', metric_acc(total_tp, total_fp, total_fn, total_tn))
+    print('Accuracy: ', metric_acc(total_tp, total_fp, total_fn, total_tn))
     recall = metric_true_positive_rate(total_tp, total_fn)
     precision = metric_precision(total_tp, total_fp)
-    print('Recall:', recall)
     print('Precision:', precision)
+    print('Recall:', recall)
     print('F1 Score:', metric_f1(precision, recall))
     print('MCC:', metric_mcc(table))

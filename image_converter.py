@@ -5,6 +5,10 @@ import utm
 import os, shutil
 
 def create(classe, flag):
+    status = 'not fishing'
+    if flag == 1:
+        status = 'fishing'
+    print("Creating " + classe + ' for ' + status + ' data')
     x = []
     y = []
     v = []
@@ -22,17 +26,17 @@ def create(classe, flag):
     with (open('data/' + classe + '.csv', 'r') as csvfile):
         plots = csv.reader(csvfile, delimiter=',')
         next(plots)  # skipping header
-        mmsiAnterior = 'none'
-        mmsiAtual = 'none'
+        previously_mmsi = 'none'
+        current_mmsi = 'none'
         cont_train = 0
         if flag == 0:
             classe = 'not_fishing'
         plt.figure(figsize=(2.56, 2.56))
         for row in plots:
-            mmsiAnterior = mmsiAtual
-            mmsiAtual = row[0]
+            previously_mmsi = current_mmsi
+            current_mmsi = row[0]
             source = row[9]
-            if float(row[8]) != flag or source == 'false_positives' or mmsiAtual != mmsiAnterior:
+            if float(row[8]) != flag or source == 'false_positives' or current_mmsi != previously_mmsi:
                 if len(x) >= 3:
 
                     plt.axis('off')
@@ -58,7 +62,7 @@ def create(classe, flag):
                             plt.plot(a, b, marker='o', color=color)
                     cont_train = cont_train + 1
                     avg_point = int(len(x) / 2)
-                    filename = 'images/' + classe + '/' + str(mmsiAtual) + '-' + str(cont_train) + 'A['+classe+','+str(x[avg_point])+','+str(y[avg_point])+'].png'
+                    filename = 'images/' + classe + '/' + str(current_mmsi) + '-' + str(cont_train) + 'A['+classe+','+str(x[avg_point])+','+str(y[avg_point])+'].png'
                     plt.savefig(filename)
                     plt.clf()
 
@@ -82,7 +86,7 @@ def create(classe, flag):
                 x.clear()
                 y.clear()
                 if float(row[8]) != flag or str(row[9]) == 'false_positives':
-                    mmsiAnterior = 'none'
+                    previously_mmsi = 'none'
                     continue
             lat = float(row[6])
             lon = float(row[7])
@@ -130,36 +134,39 @@ def create(classe, flag):
         dst = moveto + type + classe + '/' + f
         shutil.move(src, dst)
 
-try:
-    shutil.rmtree('images/train')
-except:
-    print('Error: train folder does not exists')
-try:
-    shutil.rmtree('images/test')
-except:
-    print('Error: test folder does not exists')
-try:
-    shutil.rmtree('images/val')
-except:
-    print('Error: validation folder does not exists')
+def converter():
+    print('Converting kinematic data to images...')
+    print('Verifying previously files and folders...')
+    try:
+        shutil.rmtree('images/train')
+    except:
+        print('Error: train folder does not exists')
+    try:
+        shutil.rmtree('images/test')
+    except:
+        print('Error: test folder does not exists')
+    try:
+        shutil.rmtree('images/val')
+    except:
+        print('Error: validation folder does not exists')
 
-try:
+    try:
+        shutil.rmtree('images/not_fishing')
+    except:
+        print('Nothing to delete: \'not fishing\' files were not created before')
+
+    create('drifting_longlines', 1)
+    create('drifting_longlines', 0)
+    create('fixed_gear', 1)
+    create('fixed_gear', 0)
+    create('purse_seines', 1)
+    create('purse_seines', 0)
+    create('trawlers', 1)
+    create('trawlers', 0)
+
+    shutil.rmtree('images/drifting_longlines')
+    shutil.rmtree('images/fixed_gear')
+    shutil.rmtree('images/purse_seines')
+    shutil.rmtree('images/trawlers')
     shutil.rmtree('images/not_fishing')
-except:
-    print('Nothing to delete: \'not fishing\' files were not created before')
 
-create('drifting_longlines', 1)
-create('drifting_longlines', 0)
-create('fixed_gear', 1)
-create('fixed_gear', 0)
-create('purse_seines', 1)
-create('purse_seines', 0)
-create('trawlers', 1)
-create('trawlers', 0)
-
-shutil.rmtree('images/drifting_longlines')
-shutil.rmtree('images/fixed_gear')
-shutil.rmtree('images/purse_seines')
-shutil.rmtree('images/trawlers')
-shutil.rmtree('images/not_fishing')
-print('Terminou')

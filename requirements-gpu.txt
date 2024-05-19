@@ -1,0 +1,11 @@
+pillow
+utm
+matplotlib
+metrics
+scikit-fuzzy
+scikit-learn
+folium
+shapely
+geopy
+pandas
+numpy==1.23.5

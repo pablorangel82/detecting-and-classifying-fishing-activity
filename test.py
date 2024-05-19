@@ -1,6 +1,7 @@
 import numpy as np
 
-from fusioner import do_fuzzy_inference, discovery_max_pert_per_fishing_spot
+from fishing_spots import extraction
+from fusion_agent import do_fuzzy_inference, discovery_max_pert_per_fishing_spot
 from data_loader import load_fishing_spots, get_image_data
 from fuzzy import fuzzy_inference
 from metrics import metric_mcc
