@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bbe4db5-1a57-4273-b157-bbdda277a2f7" name="Changes" comment="Model and weights saved to reproduce results.">
+    <list default="true" id="0bbe4db5-1a57-4273-b157-bbdda277a2f7" name="Changes" comment="readme updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-cpu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-cpu.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-gpu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-gpu.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,33 +37,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.Fusion Results.executor": "Run",
-    "Python.Load and Test.executor": "Run",
-    "Python.Preparation.executor": "Run",
-    "Python.Train and Test.executor": "Run",
-    "Python.fishing_spots.executor": "Run",
-    "Python.image_converter.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.preparation.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.test.executor": "Debug",
-    "Python.testGPU.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Pablo/Projetos/ship-detector-classifier",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Fusion Results.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Load and Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Preparation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Train and Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fishing_spots.executor&quot;: &quot;Run&quot;,
+    &quot;Python.image_converter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.preparation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.testGPU.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pablo/Projetos/ship-detector-classifier&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Pablo\Projetos\detecting-and-classifying-fishing-activity\fusion_results" />
@@ -210,7 +214,9 @@
       <workItem from="1715628992257" duration="41913000" />
       <workItem from="1715895877439" duration="6434000" />
       <workItem from="1716043367936" duration="32937000" />
-      <workItem from="1716129609099" duration="21008000" />
+      <workItem from="1716129609099" duration="22003000" />
+      <workItem from="1716508264152" duration="623000" />
+      <workItem from="1716743884198" duration="3609000" />
     </task>
     <task id="LOCAL-00001" summary="Model and weights saved to reproduce results.">
       <option name="closed" value="true" />
@@ -268,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716154591047</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="readme updated">
+      <option name="closed" value="true" />
+      <created>1716155185400</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716155185400</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,14 +293,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Model and weights saved to reproduce results." />
-    <option name="LAST_COMMIT_MESSAGE" value="Model and weights saved to reproduce results." />
+    <MESSAGE value="readme updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme updated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$preparation.coverage" NAME="preparation Coverage Results" MODIFIED="1714783084926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Train_and_Test.coverage" NAME="Train and Test Coverage Results" MODIFIED="1716150716668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$image_converter.coverage" NAME="image_converter Coverage Results" MODIFIED="1714686262872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$testGPU.coverage" NAME="testGPU Coverage Results" MODIFIED="1714689555384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Fusion_Results.coverage" NAME="Fusion Results Coverage Results" MODIFIED="1716151859120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Fusion_Results.coverage" NAME="Fusion Results Coverage Results" MODIFIED="1716746651782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$Load_and_Test.coverage" NAME="Load and Test Coverage Results" MODIFIED="1715606549268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$run.coverage" NAME="run Coverage Results" MODIFIED="1714687398195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/detecting_and_classifying_fishing_activity$main.coverage" NAME="main Coverage Results" MODIFIED="1714774428554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

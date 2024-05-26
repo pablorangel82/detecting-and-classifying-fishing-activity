@@ -1,12 +1,12 @@
-tensorflow
-pillow
-utm
-matplotlib
-metrics
-scikit-fuzzy
-scikit-learn
-folium
-shapely
-geopy
-pandas
+tensorflow==2.10
+pillow==10.3.0
+utm==0.7.0
+matplotlib==3.9.0
+metrics==0.3.3
+scikit-fuzzy==0.4.2
+scikit-learn==1.4.2
+folium==0.16.0
+shapely==2.0.4
+geopy==2.4.1
+pandas==2.2.2
 

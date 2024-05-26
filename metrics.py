@@ -94,7 +94,6 @@ def format_table(number_of_classes, correct_labels, predicted_labels):
     return table
 
 def comparision(obtained, fishnet, gfw):
-    obtained = obtained * 100
     eval = 'Worse of all'
     if obtained > fishnet and obtained > gfw:
         eval = 'Best of all'
@@ -153,9 +152,13 @@ def show_metrics(confusion_matrix, table):
 
     for i in range(dim):
         acc = metric_acc(tps[i], fps[i], fns[i], tns[i])
+        acc = round(acc * 100,2)
         precision = metric_precision(tps[i], fps[i])
+        precision = round(precision * 100, 2)
         recall = metric_true_positive_rate(tps[i], fns[i])
+        recall = round(recall * 100, 2)
         f1 = metric_f1(precision, recall)
+        f1 = round(f1, 2)
 
         acc_eval = comparision(acc, fishnet[i][0], gfw[i][0])
         prec_eval = comparision(precision, fishnet[i][1], gfw[i][1])
@@ -168,10 +171,10 @@ def show_metrics(confusion_matrix, table):
         print('False Positives: ' + str(fps[i]))
         print('False Negatives: ' + str(fns[i]))
         print('Metric | Value Obtained | FishNet | GFW')
-        print('Accuracy: ' + str(acc*100) + ' | ' + str(fishnet[i][0]) + ' | ' + str(gfw[i][0]) + ' ' + acc_eval)
-        print('Precision: ' + str(precision*100) + ' | ' + str(fishnet[i][1]) + ' | ' + str(gfw[i][1]) + ' ' + prec_eval)
-        print('Recall: ' + str(recall*100) + ' | ' + str(fishnet[i][2]) + ' | ' + str(gfw[i][2]) + ' ' + recall_eval)
-        print('F1 Score: ' + str(f1*100) + ' | ' + str(fishnet[i][3]) + ' | ' + str(gfw[i][3]) + ' ' + f1_eval)
+        print('Accuracy: ' + str(acc) + ' | ' + str(fishnet[i][0]) + ' | ' + str(gfw[i][0]) + ' ' + acc_eval)
+        print('Precision: ' + str(precision) + ' | ' + str(fishnet[i][1]) + ' | ' + str(gfw[i][1]) + ' ' + prec_eval)
+        print('Recall: ' + str(recall) + ' | ' + str(fishnet[i][2]) + ' | ' + str(gfw[i][2]) + ' ' + recall_eval)
+        print('F1 Score: ' + str(f1) + ' | ' + str(fishnet[i][3]) + ' | ' + str(gfw[i][3]) + ' ' + f1_eval)
 
     total_tp = sum_vector(tps)
     total_fp = sum_vector(fps)
@@ -179,10 +182,20 @@ def show_metrics(confusion_matrix, table):
     total_tn = sum_vector(tns)
 
     print('\nOverall metrics')
-    print('Accuracy: ', metric_acc(total_tp, total_fp, total_fn, total_tn))
-    recall = metric_true_positive_rate(total_tp, total_fn)
+    acc= metric_acc(total_tp, total_fp, total_fn, total_tn)
+    acc = round(acc * 100, 2)
+    print('Accuracy: ' + str(acc))
+
     precision = metric_precision(total_tp, total_fp)
+    precision = round(precision * 100, 2)
     print('Precision:', precision)
+
+    recall = metric_true_positive_rate(total_tp, total_fn)
+    recall = round(recall * 100, 2)
     print('Recall:', recall)
-    print('F1 Score:', metric_f1(precision, recall))
-    print('MCC:', metric_mcc(table))
+
+    f1 = metric_f1(precision, recall)
+    f1 = round(f1, 2)
+    print('F1 Score:' + str(f1) )
+    mcc = round (metric_mcc(table),2)
+    print('MCC:', mcc )
