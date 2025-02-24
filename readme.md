@@ -58,7 +58,7 @@
 4. **Execute the Results Script:**
    - Run the `fusion_results.py` script. This will provide you with the results obtained as published in the Fusion Conference.
 
-5. **Cite the Work:**
+5. **Cite this work:**
    - Please cite us using this DOI number: 10.23919/FUSION59988.2024.10706303
 
 P. Rangel, V. M. d. A. Nunes, M. D. R. Salazar, R. A. Simões, L. M. d. C. Rosa and J. G. d. C. Júunior, "A Hybrid Model for Detection and Classification of Fishing Activity: A Context-Based Approach," 2024 27th International Conference on Information Fusion (FUSION), Venice, Italy, 2024, pp. 1-8, doi: 10.23919/FUSION59988.2024.10706303.
